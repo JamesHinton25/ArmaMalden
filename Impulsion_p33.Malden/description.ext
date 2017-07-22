@@ -1,0 +1,128 @@
+disableChannels[] = { {0, true, true}, {1, true, true}, {2, true, true}, {3, false, false}, {4, false, false}, {5, false, false}, {6, true, true} };
+
+enableDebugConsole = 1;
+respawn = 3;
+disabledAI = 1;
+respawnDialog = 0;
+
+class Header
+{
+    gameType = RPG;
+    minPlayers = 1;
+    maxPlayers = 175;
+};
+
+#include "core\server\remoteExec.hpp"
+#include "infiSTAR\infiSTAR_AdminMenu.hpp"
+#include "dialog\MasterHandler.hpp"
+#include "core\impulsion\master.hpp"
+
+class CfgServer
+{
+    DatabaseName = "malden_life";
+    //DatabaseName = "altislife";
+    DebugMode = 0;
+    HeadlessSupport = 0;
+};
+
+class RscTitles
+{
+    #include "dialog\progress.hpp"
+    #include "dialog\hud_nameTags.hpp"
+    #include "dialog\hud_stats.hpp"
+    #include "dialog\status.hpp"
+};
+
+class CfgFunctions
+{
+    #include "core\impulsion\functions.hpp"
+};
+
+class CfgDebriefing
+{
+    class NotWhitelisted
+    {
+        title = "$STR_NotWhitelisted_Title";
+        subtitle = "$STR_NotWhitelisted_SubTitle";
+        description = "$STR_NotWhitelisted_Descript";
+        pictureBackground = "";
+        picture = "";
+        pictureColor[] = {0,0.3,0.6,1};
+    };
+    class Blacklisted
+    {
+        title = "$STR_Blacklisted_Title";
+        subtitle = "$STR_Blacklisted_SubTitle";
+        description = "$STR_Blacklisted_Descript";
+        pictureBackground = "";
+        picture = "";
+        pictureColor[] = {0,0.3,0.6,1};
+    };
+};
+class CfgNotifications
+{
+    class MedicalRequestEmerg
+    {
+        title = "$STR_MedicalRequestEmerg_Title";
+        iconPicture = "\A3\ui_f\data\map\mapcontrol\taskIcon_ca.paa";
+        description = "%1";
+        duration = 5;
+        priority = 7;
+    };
+    class TextMessage
+    {
+        title = "$STR_TextMessage_Title";
+        iconPicture = "icons\ico_messageNew.paa";
+        description = "%1";
+        duration = 10;
+        priority = 6;
+    };
+    class PoliceDispatch
+    {
+        title = "$STR_PoliceDispatch_Title";
+        iconPicture = "icons\ico_messagePolice.paa";
+        description = "%1";
+        duration = 10;
+        priority = 6;
+    };
+    class AdminDispatch
+    {
+        title = "$STR_AdminDispatch_Title";
+        iconPicture = "icons\ico_messageAdmin.paa";
+        description = "%1";
+        duration = 10;
+        priority = 6;
+    };
+    class AdminMessage
+    {
+        title = "$STR_AdminMessage_Title";
+        iconPicture = "icons\ico_messageAdmin.paa";
+        description = "%1";
+        duration = 10;
+        priority = 5;
+    };
+    class Mission
+    {
+        title = "$STR_Mission_Title";
+        iconPicture = "icons\ico_messageAdmin.paa";
+        description = "%1";
+        duration = 15;
+        priority = 5;
+    };
+    class TaxiMessage
+    {
+        title = "$STR_TaxiMessage_Title";
+        iconPicture = "icons\ico_messageNew.paa";
+        description = "%1";
+        duration = 10;
+        priority = 6;
+    };
+    class PoliceMessage
+    {
+        title = "Gendarmerie";
+        iconPicture = "icons\ico_messagePolice.paa";
+        description = "%1";
+        duration = 10;
+        priority = 5;
+    };
+};
